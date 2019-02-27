@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  display: flex;
+}
+
+.socialRow{
+  margin: 0 -5px;
+}
+
+.socialCol{
+  width: 160px;
+  padding: 0 5px;
+  float: left;
+}
+
+.socialCtl {
+  height: 35px;
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  text-align: center;
+  color: #fff;
+  line-height: 35px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.fbBg{
+  background: #3b5998;
+}
