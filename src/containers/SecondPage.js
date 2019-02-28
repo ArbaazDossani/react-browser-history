@@ -16,7 +16,10 @@ class SecondPage extends React.Component {
   render() {
     return (
       <div style={{width:'100%'}}>
-        <span onClick={() => this.historyPush()}>Click to push History</span>
+        <div> Current Page: Second Page </div>
+        <div onClick={() => this.historyPush()}>Click to push First Page</div>
+        or
+        <div onClick={() => this.props.historyGoBack()}> Go Back to Previous Screen </div>
       </div>
     )
   }
@@ -27,6 +30,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   historyPush : (newLoc, dontAlterBrowserHistory) => dispatch(reactBrowserHistoryReducer.historyPush(newLoc, dontAlterBrowserHistory)),
+  historyGoBack : (payload, dontAlterBrowserHistory) => dispatch(reactBrowserHistoryReducer.historyGoBack(payload, dontAlterBrowserHistory)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SecondPage);

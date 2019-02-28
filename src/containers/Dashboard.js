@@ -12,12 +12,11 @@ class Dashboard extends React.Component {
     }
     this.props.historyPush(newLoc);
   }
-
   render() {
     return (
       <div style={{width:'100%'}}>
-        <span> Current Page: Dashboard </span>
-        <span onClick={() => this.historyPush()}>Click to push History</span>
+        <div> Current Page: Dashboard </div>
+        <div onClick={() => this.historyPush()}>Click to push Second Page</div>
       </div>
     )
   }
