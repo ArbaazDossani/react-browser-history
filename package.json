@@ -24,6 +24,7 @@
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "0.11.2",
     "fs-extra": "3.0.1",
+    "gh-pages": "^2.0.1",
     "halogen": "^0.2.0",
     "html-webpack-plugin": "2.29.0",
     "immutable": "^3.8.1",
@@ -54,8 +55,11 @@
     "start": "NODE_ENV=production node scripts/start.js",
     "local": "NODE_ENV=development node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://arbaazdossani.github.io/history/",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
