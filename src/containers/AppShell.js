@@ -45,15 +45,20 @@ class AppShell extends React.Component {
   }
   render() {
     return (
-      <div>
-        Last History Action: { this.props.history.action }
+      <div style={{width: '100%'}}>
         { this.state.browserNavigation &&
-            <div>
-              Last Browser Selected history Action: { this.state.isBrowserForward ? 'Forward Action' : 'Back Action' }
+            <div style={{ position:'absolute', border: '1px solid black', padding: 20, margin: 10, left: 0 }}>
+              Browser Navigation Clicked:
+              <br/>
+              { this.state.isBrowserForward ? 'Forward' : 'Back' }
             </div>
         }
-        <hr />
-        <hr />
+        <div style={{ position:'absolute', border: '1px solid black', padding: 20, margin: 10, right: 0 }}>
+          Last History Action:
+          <br/>
+          { this.props.history.action && <span>{this.props.history.action}</span> }
+        </div>
+
       </div>
     )
   }

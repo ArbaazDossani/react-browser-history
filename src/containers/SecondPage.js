@@ -15,11 +15,10 @@ class SecondPage extends React.Component {
 
   render() {
     return (
-      <div style={{width:'100%'}}>
-        <div> Current Page: Second Page </div>
-        <div onClick={() => this.historyPush()}>Click to push First Page</div>
-        or
-        <div onClick={() => this.props.historyGoBack()}> Go Back to Previous Screen </div>
+      <div>
+        <div style={{ border: '1px solid black', padding: 20, marginBottom: 40 }}> Current Page: Second Page </div>
+        { this.props.historyStack.length > 1 && <button style={{ border: '1px solid black', padding: 20, marginRight: 20 }} onClick={() => this.props.historyGoBack()}> Go Back to Previous Screen </button>}
+        <button style={{ border: '1px solid black', padding: 20 }} onClick={() => this.historyPush()}>Push Another Page</button>
       </div>
     )
   }
