@@ -29,10 +29,10 @@ class AppShell extends React.Component {
     if (isEqual(nextProps.history.action, 'POP') && !isEqual(nextLoc.key, thisLoc.key)) {
       const isBrowserForward = isForwardBrowserAction(nextProps, this.props);
       const dontAlterBrowserHistory = true;
-      // this.setState({
-      //   browserNavigation: true,
-      //   isBrowserForward
-      // });
+      this.setState({
+        browserNavigation: true,
+        isBrowserForward
+      });
       if (!isBrowserForward) {
         if (!isEqual(`${nextLoc.pathname}${nextLoc.search}`, `${thisLoc.pathname}${thisLoc.search}`)
           && nextProps.historyStack.length > 1) {
@@ -49,9 +49,7 @@ class AppShell extends React.Component {
         Last History Action: { this.props.history.action }
         { this.state.browserNavigation &&
             <div>
-              Navigated using Browser Buttons
-              <br />
-              { this.state.isBrowserForward ? 'Forward Action' : 'Back Action' }
+              Last Browser Selected history Action: { this.state.isBrowserForward ? 'Forward Action' : 'Back Action' }
             </div>
         }
         <hr />
